@@ -2,7 +2,6 @@ package ru.netology.delivery.data;
 
 
 import com.codeborne.selenide.Condition;
-import lombok.var;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,8 +15,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 class CardDeliveryTest {
-
-    @BeforeEach
     void setup() {
         open("http://localhost:9999");
     }
@@ -25,8 +22,6 @@ class CardDeliveryTest {
     @Test
     @DisplayName("Should successful plan meeting")
     void shouldSuccessfulPlanMeeting() {
-
-
         var validUser = DataGenerator.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
