@@ -43,6 +43,8 @@ public class DataGenerator {
     }
 
     public static class Registration {
+        private static String locale;
+
         private Registration() {
         }
 
