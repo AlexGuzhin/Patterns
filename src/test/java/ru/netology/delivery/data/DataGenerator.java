@@ -32,7 +32,7 @@ public class DataGenerator {
         return cities[new Random().nextInt(cities.length)];
     }
 
-    public static String generateNames(String locale) {
+    public static String generateName(String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.name().lastName() + " " + faker.name().firstName();
     }
@@ -43,20 +43,20 @@ public class DataGenerator {
     }
 
     public static class Registration {
-        private static String locale;
 
         private Registration() {
         }
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(generateCity(), generateNames(locale), generatePhone(locale));
+            return new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
         }
-    }
 
-    @Value
-    public static class UserInfo {
-        String city;
-        String name;
-        String phone;
+
+        @Value
+        public static class UserInfo {
+            String city;
+            String name;
+            String phone;
+        }
     }
 }
