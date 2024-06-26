@@ -18,7 +18,7 @@ public class DataGenerator {
 
     public static String generateCity() {
         var cities = new String[]{"Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Магас", "Нальчик",
-                "Элиста", "Черкесск", "Петрозаводск", "Сыктывкар", "Симферополь", "Йошшшкар-Ола", "Саранск",
+                "Элиста", "Черкесск", "Петрозаводск", "Сыктывкар", "Симферополь", "Йошкар-Ола", "Саранск",
                 "Якутск", "Владикавказ", "Казань", "Кызыл", "Ижевск", "Абакан", "Грозный", "Чебоксары",
                 "Барнаул", "Чита", "Петропавловск-Камчатский", "Краснодар", "Красноярск", "Пермь",
                 "Владивосток", "Ставрополь", "Хабаровск", "Благовещенск", "Архангельск", "Астрахань",
@@ -43,20 +43,17 @@ public class DataGenerator {
     }
 
     public static class Registration {
-
         private Registration() {
         }
 
         public static UserInfo generateUser(String locale) {
             return new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
         }
-
-
-        @Value
-        public static class UserInfo {
+    }
+    @Value
+    public static class UserInfo {
             String city;
             String name;
             String phone;
-        }
     }
 }
