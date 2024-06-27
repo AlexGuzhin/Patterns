@@ -43,7 +43,7 @@ class CardDeliveryTest {
                 .shouldBe(visible);
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(secondMeetingDate);
-        $(byText("Заланировать")).click();
+        $(byText("Запланировать")).click();
         $("data-test-id='replan-notification'] .notification__content")
                 .shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"))
                 .shouldBe(visible);
